@@ -54,16 +54,33 @@ public class NPC001_RedSamurai : MonoBehaviour
 
     IEnumerator NPC001Active()
     {
-        textBox.SetActive(true);
-        NPCName.GetComponent<Text>().text = "Giorgio";
-        NPCName.SetActive(true);
-        NPCText.GetComponent<Text>().text = "Hello friend, I may have a quest for you if you wish to accept it. Please come back later on this afternoon";
-        NPCText.SetActive(true);
-        yield return new WaitForSeconds(5.5f);
-        textBox.SetActive(false);
-        NPCName.SetActive(false);
-        NPCText.SetActive(false);
-        actionDisplay.SetActive(true);
-        actionText.SetActive(true);
+        if(QuestManager.activeQuestNumber == 2)
+        {
+            textBox.SetActive(true);
+            NPCName.GetComponent<Text>().text = "Giorgio";
+            NPCName.SetActive(true);
+            NPCText.GetComponent<Text>().text = "We have a spiders problem. Can you kill the spiders and their boss in the forest? ";
+            NPCText.SetActive(true);
+            yield return new WaitForSeconds(5.5f);
+            textBox.SetActive(false);
+            NPCName.SetActive(false);
+            NPCText.SetActive(false);
+            actionDisplay.SetActive(true);
+            actionText.SetActive(true);
+        }
+        else
+        {
+            textBox.SetActive(true);
+            NPCName.GetComponent<Text>().text = "Giorgio";
+            NPCName.SetActive(true);
+            NPCText.GetComponent<Text>().text = "Hello friend, I may have a quest for you if you wish to accept it. Please come back later on this afternoon";
+            NPCText.SetActive(true);
+            yield return new WaitForSeconds(5.5f);
+            textBox.SetActive(false);
+            NPCName.SetActive(false);
+            NPCText.SetActive(false);
+            actionDisplay.SetActive(true);
+            actionText.SetActive(true);
+        }
     }
 }
