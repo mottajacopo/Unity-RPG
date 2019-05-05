@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class SpiderBoxAI : MonoBehaviour
+public class SpiderBossAI : MonoBehaviour
 {
     public GameObject destination;
     private NavMeshAgent agent;
