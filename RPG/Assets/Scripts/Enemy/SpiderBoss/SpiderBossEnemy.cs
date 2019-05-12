@@ -31,9 +31,15 @@ public class SpiderBossEnemy : MonoBehaviour
     {
         globalSpider = spiderStatus;
 
+        if(spiderStatus == 6)
+        {
+            StartCoroutine(DeathSpider());
+        }
+
         if (enemyHealth <= 0)
         {
             if(spiderStatus == 0)
+            QuestManager.subQuestNumber = 2;
             StartCoroutine(DeathSpider());
         }
     }
@@ -49,6 +55,5 @@ public class SpiderBossEnemy : MonoBehaviour
         spiderBoss.GetComponent<Animation>().Play("death");
         yield return new WaitForSeconds(1);
         spiderBoss.GetComponent<Animation>().enabled = false;
-        QuestManager.subQuestNumber = 2;
     }
 }

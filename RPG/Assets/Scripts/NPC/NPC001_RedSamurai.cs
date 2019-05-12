@@ -71,25 +71,38 @@ public class NPC001_RedSamurai : MonoBehaviour
                 smallSpider.SetActive(false);
                 smallSpiderOne.SetActive(false);
                 bossSpider.SetActive(false);
-                // cave object set here
-                QuestManager.activeQuestNumber = 3;
-                QuestManager.subQuestNumber = 1;
                 yield return new WaitForSeconds(5.5f);
                 textBox.SetActive(false);
                 NPCName.SetActive(false);
                 NPCText.SetActive(false);
                 actionDisplay.SetActive(true);
                 actionText.SetActive(true);
+                QuestManager.activeQuestNumber = 3;
+                QuestManager.subQuestNumber = 0;
             }
             else if (QuestManager.subQuestNumber == 1)
             {
                 textBox.SetActive(true);
                 NPCName.GetComponent<Text>().text = "Giorgio";
                 NPCName.SetActive(true);
-                NPCText.GetComponent<Text>().text = "We have a spiders problem. Can you kill the spiders and their boss in the forest?";                NPCText.SetActive(true);
+                NPCText.GetComponent<Text>().text = "We have a spiders problem. Can you kill the spiders and their boss in the forest?";
+                NPCText.SetActive(true);
                 smallSpider.SetActive(true);
                 smallSpiderOne.SetActive(true);
                 bossSpider.SetActive(true);
+                yield return new WaitForSeconds(5.5f);
+                textBox.SetActive(false);
+                NPCName.SetActive(false);
+                NPCText.SetActive(false);
+                QuestManager.subQuestNumber = 1;
+            }
+            else
+            {
+                textBox.SetActive(true);
+                NPCName.GetComponent<Text>().text = "Giorgio";
+                NPCName.SetActive(true);
+                NPCText.GetComponent<Text>().text = "Please complete the quest and come back";
+                NPCText.SetActive(true);
                 yield return new WaitForSeconds(5.5f);
                 textBox.SetActive(false);
                 NPCName.SetActive(false);
