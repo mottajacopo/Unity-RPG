@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public Animator anim;
+    public GameObject player;
     public GameObject backSword;
     public GameObject backShield;
     public GameObject handSword;
@@ -29,6 +30,7 @@ public class PlayerMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        player.name = "player";
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody>();
         col = GetComponent<CapsuleCollider>();

@@ -17,8 +17,7 @@ public class SpiderAI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        player.name = "player";
-        allowedRange = 30;
+        allowedRange = 20;
         dealingDamage = false;
     }
 
@@ -66,9 +65,10 @@ public class SpiderAI : MonoBehaviour
             attackTrigger = 1;
     }
 
-    void OnCollisionExit(Collision other)
+    void OnCollisionExit(Collision col)
     {
-        attackTrigger = 0;
+        if (col.gameObject.name == "player")
+            attackTrigger = 0;
     }
 
     IEnumerator TakingDamage()

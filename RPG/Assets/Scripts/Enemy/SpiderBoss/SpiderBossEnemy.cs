@@ -12,8 +12,6 @@ public class SpiderBossEnemy : MonoBehaviour
     public SpiderBossAI spiderAiScript;
     public SpiderBossAttack spiderAttackScript;
 
-    public GameObject oldNPC;
-    public GameObject newNPC;
 
     public static float globalSpider;
 
@@ -51,7 +49,6 @@ public class SpiderBossEnemy : MonoBehaviour
         spiderBoss.GetComponent<Animation>().Play("death");
         yield return new WaitForSeconds(1);
         spiderBoss.GetComponent<Animation>().enabled = false;
-        oldNPC.SetActive(false);
-        newNPC.SetActive(true);
+        QuestManager.subQuestNumber = 2;
     }
 }

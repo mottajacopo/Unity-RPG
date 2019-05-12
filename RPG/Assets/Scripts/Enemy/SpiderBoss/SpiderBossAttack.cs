@@ -47,14 +47,18 @@ public class SpiderBossAttack : MonoBehaviour
         dealingDamage = false;
     }
 
-    void OnTriggerEnter()
+    void OnTriggerEnter(Collider col)
     {
-        animController = 1;
+        if (col.gameObject.name == "player")
+            animController = 1;
     }
 
-    void OnTriggerExit()
+    void OnTriggerExit(Collider col)
     {
-        animController = 0;
-        dealingDamage = false;
+        if (col.gameObject.name == "player")
+        {
+            animController = 0;
+            dealingDamage = false;
+        }
     }
 }

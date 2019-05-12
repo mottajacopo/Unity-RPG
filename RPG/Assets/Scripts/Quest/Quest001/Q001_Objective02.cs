@@ -54,6 +54,7 @@ public class Q001_Objective02 : MonoBehaviour
         {
             if (distance <= 3)
             {
+                QuestManager.subQuestNumber = 3;
                 this.GetComponent<BoxCollider>().enabled = false;
                 treasureChest.GetComponent<Animation>().Play("Q01ChestOpening");
                 actionText.SetActive(false);

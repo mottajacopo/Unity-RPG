@@ -7,6 +7,8 @@ public class QuestManager : MonoBehaviour
     // assign to each quest in the game a number 
     public static int activeQuestNumber;
     public int internalQuestNumber;
+    public static int subQuestNumber;
+    public int internalSubQuestNumber;
 
     // variable needed for the pointer
     public GameObject pointer;
@@ -14,10 +16,9 @@ public class QuestManager : MonoBehaviour
     public GameObject objective01Mark;
     public GameObject objective02Mark;
     public GameObject objective03Mark;
-    public GameObject objective04Mark; // complete Quest 001
+    public GameObject objective04Mark; // complete Quest001
 
-    public static int subQuestNumber;
-    public int internalSubQuestNumber;
+
 
 
     void Start()

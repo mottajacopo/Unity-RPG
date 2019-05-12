@@ -12,6 +12,10 @@ public class NPC001_RedSamurai : MonoBehaviour
     public GameObject NPCName;
     public GameObject NPCText;
     public GameObject player;
+    public GameObject smallSpider;
+    public GameObject smallSpiderOne;
+    public GameObject bossSpider;
+
 
     // Update is called once per frame
     void Update()
@@ -26,6 +30,7 @@ public class NPC001_RedSamurai : MonoBehaviour
         // check if we are gonna activate the trigger 
         if (distance <= 3)
         {
+
             actionText.GetComponent<Text>().text = "Talk";
             actionDisplay.SetActive(true);
             actionText.SetActive(true);
@@ -56,17 +61,40 @@ public class NPC001_RedSamurai : MonoBehaviour
     {
         if(QuestManager.activeQuestNumber == 2)
         {
-            textBox.SetActive(true);
-            NPCName.GetComponent<Text>().text = "Giorgio";
-            NPCName.SetActive(true);
-            NPCText.GetComponent<Text>().text = "We have a spiders problem. Can you kill the spiders and their boss in the forest? ";
-            NPCText.SetActive(true);
-            yield return new WaitForSeconds(5.5f);
-            textBox.SetActive(false);
-            NPCName.SetActive(false);
-            NPCText.SetActive(false);
-            actionDisplay.SetActive(true);
-            actionText.SetActive(true);
+            if (QuestManager.subQuestNumber == 2)
+            {
+                textBox.SetActive(true);
+                NPCName.GetComponent<Text>().text = "Giorgio";
+                NPCName.SetActive(true);
+                NPCText.GetComponent<Text>().text = "Thank you very much for your help. There is a cave outside the village, please go and explore";
+                NPCText.SetActive(true);
+                smallSpider.SetActive(false);
+                smallSpiderOne.SetActive(false);
+                bossSpider.SetActive(false);
+                // cave object set here
+                QuestManager.activeQuestNumber = 3;
+                QuestManager.subQuestNumber = 1;
+                yield return new WaitForSeconds(5.5f);
+                textBox.SetActive(false);
+                NPCName.SetActive(false);
+                NPCText.SetActive(false);
+                actionDisplay.SetActive(true);
+                actionText.SetActive(true);
+            }
+            else if (QuestManager.subQuestNumber == 1)
+            {
+                textBox.SetActive(true);
+                NPCName.GetComponent<Text>().text = "Giorgio";
+                NPCName.SetActive(true);
+                NPCText.GetComponent<Text>().text = "We have a spiders problem. Can you kill the spiders and their boss in the forest?";                NPCText.SetActive(true);
+                smallSpider.SetActive(true);
+                smallSpiderOne.SetActive(true);
+                bossSpider.SetActive(true);
+                yield return new WaitForSeconds(5.5f);
+                textBox.SetActive(false);
+                NPCName.SetActive(false);
+                NPCText.SetActive(false);
+            }
         }
         else
         {
@@ -79,8 +107,6 @@ public class NPC001_RedSamurai : MonoBehaviour
             textBox.SetActive(false);
             NPCName.SetActive(false);
             NPCText.SetActive(false);
-            actionDisplay.SetActive(true);
-            actionText.SetActive(true);
         }
     }
 }
