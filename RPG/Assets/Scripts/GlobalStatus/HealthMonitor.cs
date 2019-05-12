@@ -25,7 +25,7 @@ public class HealthMonitor : MonoBehaviour
         if (healthValue <= 0)
         {
             hearth1.SetActive(true);
-            SceneManager.LoadScene(1);
+            SceneManager.LoadScene("GameOver");
         }
 
         if (healthValue == 1)

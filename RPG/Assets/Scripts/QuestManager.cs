@@ -13,10 +13,13 @@ public class QuestManager : MonoBehaviour
     // variable needed for the pointer
     public GameObject pointer;
     public GameObject mainMark; // place where the arrow will point to
-    public GameObject objective01Mark;
+    public GameObject objective01Mark; // start Quest001
     public GameObject objective02Mark;
     public GameObject objective03Mark;
     public GameObject objective04Mark; // complete Quest001
+
+    public GameObject objective05Mark; // start Quest002
+    public GameObject objective06Mark; // complete Quest002
 
 
 
@@ -42,24 +45,40 @@ public class QuestManager : MonoBehaviour
             pointer.SetActive(true);
         }
 
-        if (internalSubQuestNumber == 1)
+        if (activeQuestNumber == 1)
         {
-            mainMark.transform.position = objective01Mark.transform.position;
+            if (internalSubQuestNumber == 1)
+            {
+                mainMark.transform.position = objective01Mark.transform.position;
+            }
+
+            else if (internalSubQuestNumber == 2)
+            {
+                mainMark.transform.position = objective02Mark.transform.position;
+            }
+
+            else if (internalSubQuestNumber == 3)
+            {
+                mainMark.transform.position = objective03Mark.transform.position;
+            }
+
+            else if (internalSubQuestNumber == 4)
+            {
+                mainMark.transform.position = objective04Mark.transform.position;
+            }
         }
 
-        if (internalSubQuestNumber == 2)
+        if (activeQuestNumber == 2)
         {
-            mainMark.transform.position = objective02Mark.transform.position;
-        }
+            if (internalSubQuestNumber == 2)
+            {
+                mainMark.transform.position = objective05Mark.transform.position;
+            }
 
-        if (internalSubQuestNumber == 3)
-        {
-            mainMark.transform.position = objective03Mark.transform.position;
-        }
-
-        if (internalSubQuestNumber == 4)
-        {
-            mainMark.transform.position = objective04Mark.transform.position;
+            else if (internalSubQuestNumber == 3)
+            {
+                mainMark.transform.position = objective06Mark.transform.position;
+            }
         }
     }
 }
