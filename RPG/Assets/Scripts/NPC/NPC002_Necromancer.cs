@@ -23,7 +23,7 @@ public class NPC002_Necromancer : MonoBehaviour
     void Update()
     {
         transform.LookAt(NPCDest.transform);
-        transform.position = Vector3.MoveTowards(transform.position, NPCDest.transform.position, speed);
+        transform.position = Vector3.MoveTowards(transform.position, NPCDest.transform.position, speed * Time.timeScale);
     }
 
     IEnumerator RunRandomWalk()
