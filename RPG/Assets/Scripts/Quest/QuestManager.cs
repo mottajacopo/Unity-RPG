@@ -21,9 +21,6 @@ public class QuestManager : MonoBehaviour
     public GameObject objective05Mark; // start Quest002
     public GameObject objective06Mark; // complete Quest002
 
-
-
-
     void Start()
     {
         pointer.SetActive(false);

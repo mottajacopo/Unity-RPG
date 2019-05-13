@@ -95,6 +95,10 @@ public class NPC001_RedSamurai : MonoBehaviour
                 NPCName.SetActive(false);
                 NPCText.SetActive(false);
                 QuestManager.subQuestNumber = 1;
+                MasterQuest.mainQuestInfo = "Hi, young control Champion.\n Unluckly, someone stole our Central Control System and now seems" +
+                    "that everything is out of control. Please go and kill the Spider that made our world unstable";
+                MasterQuest.subQuestInfo = "1. Kill the spider Boss \n" +
+                    "2. Go and Explore the cave";
             }
             else
             {

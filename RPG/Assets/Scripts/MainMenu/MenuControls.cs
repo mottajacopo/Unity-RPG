@@ -25,4 +25,10 @@ public class MenuControls : MonoBehaviour
         loadingGame.SetActive(true);
         SceneManager.LoadScene("Area01");
     }
+
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
+
 }

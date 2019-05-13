@@ -44,6 +44,8 @@ public class Quest001Complete : MonoBehaviour
                 actionDisplay.SetActive(false);
                 actionText.SetActive(false);
                 completeTrigger.SetActive(false);
+                MasterQuest.mainQuestInfo = MasterQuest.defaultQuest;
+                MasterQuest.subQuestInfo = "";
             }
         }
     }

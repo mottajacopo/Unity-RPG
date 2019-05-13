@@ -12,6 +12,8 @@ public class Quest001Take : MonoBehaviour
     public GameObject noticeCamera; // different camera to view the quest
     public GameObject MiniMap;
 
+
+
     // Update is called once per frame
     void Update()
     {
@@ -38,13 +40,17 @@ public class Quest001Take : MonoBehaviour
             {
                 MiniMap.SetActive(false);
                 //Cursor.lockState = CursorLockMode.None;
-                //Cursor.visible = true;
+                Cursor.visible = true;
                 actionDisplay.SetActive(false);
                 actionText.SetActive(false);
                 questUI.SetActive(true);
                 noticeCamera.SetActive(true);
                 player.SetActive(false);
-
+                MasterQuest.mainQuestInfo = " To fight enemies (and math) a sword is needed. Go find one. The legend has it that only the control" +
+                    "champion can handle the sword in the right way. Where the shadow of the mushroom is darker, the Kalman's light will guide you";
+                MasterQuest.subQuestInfo = "1. Reach the clearing in the wood \n" +
+                    "2. Open the cheast \n" +
+                    "3. Retrieve the weapon";
             }
         }
     }
