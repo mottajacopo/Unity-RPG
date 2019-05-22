@@ -16,7 +16,6 @@ public class Q001_Objective03 : MonoBehaviour
     public GameObject chestBlock;
     public GameObject questComplete;
     public GameObject exMark;
-    public GameObject light;
 
     void Start()
     {
@@ -51,10 +50,9 @@ public class Q001_Objective03 : MonoBehaviour
             actionText.GetComponent<Text>().text = "Take Sword";
             actionText.SetActive(true);
             actionDisplay.SetActive(true);
-            light.SetActive(true);
         }
 
-        if (Input.GetButtonDown("Action"))
+        if (Input.GetButtonDown("Action") && QuestManager.subQuestNumber == 3)
         {
             if (distance <= 3)
             {
@@ -76,7 +74,6 @@ public class Q001_Objective03 : MonoBehaviour
     {
         actionDisplay.SetActive(false);
         actionText.SetActive(false);
-        light.SetActive(false);
     }
 
     IEnumerator FinishObjective()

@@ -14,6 +14,7 @@ public class PlayerMovement : MonoBehaviour
 
     public Rigidbody rb;
     public CapsuleCollider col;
+    public AudioSource swingSword;
     private float inputH;
     private float inputV;
     public float speed;
@@ -67,7 +68,7 @@ public class PlayerMovement : MonoBehaviour
 
 
         // check if the player is jumping
-        if (Input.GetKey(KeyCode.Space) && isGrounded)
+        if (Input.GetKey(KeyCode.Space) && isGrounded && !combatMode)
         {
             isJumping = true;
             anim.SetBool("jump", isJumping);
@@ -137,12 +138,11 @@ public class PlayerMovement : MonoBehaviour
             {
                 if (isJumping)
                 {
-                    print("Press Mouse Button Left and Jump");
                     anim.Play("1H_Jump_Swing", -1, 0f);
                 }
                 else
                 {
-                    print("Press Mouse Button Left");
+                    swingSword.Play();
                     anim.Play("1H_Heavy_Smash", -1, 0f);
                 }
             }
