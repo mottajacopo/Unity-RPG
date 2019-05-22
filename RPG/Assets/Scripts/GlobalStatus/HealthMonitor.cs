@@ -5,16 +5,18 @@ using UnityEngine.SceneManagement;
 
 public class HealthMonitor : MonoBehaviour
 {
-    public static int healthValue;
-    public int internalHealth;
-    public GameObject hearth1;
-    public GameObject hearth2;
-    public GameObject hearth3;
+    public static float healthValue;
+    public float internalHealth;
+    // public GameObject hearth1;
+    // public GameObject hearth2;
+    // public GameObject hearth3;
+
+    public GameObject healthBar;
 
     // Start is called before the first frame update
     void Start()
     {
-        healthValue = 1;
+        healthValue = 300;
     }
 
     // Update is called once per frame
@@ -24,10 +26,16 @@ public class HealthMonitor : MonoBehaviour
 
         if (healthValue <= 0)
         {
-            hearth1.SetActive(true);
+            // hearth1.SetActive(true);
             SceneManager.LoadScene("GameOver");
         }
 
+        if (healthValue >= 300)
+            healthValue = 300;
+
+        healthBar.GetComponent<RectTransform>().sizeDelta = new Vector2(healthValue,30);
+
+        /*
         if (healthValue == 1)
         {
             hearth1.SetActive(true);
@@ -43,6 +51,6 @@ public class HealthMonitor : MonoBehaviour
         if (healthValue == 3)
         {
             hearth3.SetActive(true);
-        }
+        }*/
     }
 }

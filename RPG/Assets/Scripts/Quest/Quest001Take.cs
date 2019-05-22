@@ -49,7 +49,7 @@ public class Quest001Take : MonoBehaviour
                 triggerObjective1.SetActive(true);
                 triggerObjective2.SetActive(true);
 
-                MasterQuest.mainQuestInfo = " To fight enemies (and math) a sword is needed. Go find one. The legend has it that only the control" +
+                MasterQuest.mainQuestInfo = " To fight enemies (and math) a sword is needed. Go find one. The legend has it that only the control " +
                     "champion can handle the sword in the right way. Where the shadow of the mushroom is darker, the Kalman's light will guide you";
                 MasterQuest.subQuestInfo = "1. Reach the clearing in the wood \n" +
                     "2. Open the cheast \n" +

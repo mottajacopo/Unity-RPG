@@ -27,6 +27,7 @@ public class PlayerMovement : MonoBehaviour
     private bool isRunning;
     private bool isJumping;
     private bool isCrouching;
+    private bool isAttacking;
 
     // Start is called before the first frame update
     void Start()
@@ -41,7 +42,8 @@ public class PlayerMovement : MonoBehaviour
         isGrounded = true;
         isCrouching = false;
         isRunning = false;
-        isJumping = false; 
+        isJumping = false;
+        isAttacking = false;
     }
 
     // Update is called once per frame
@@ -50,20 +52,22 @@ public class PlayerMovement : MonoBehaviour
         speed = w_speed;
 
         // check if the player is running
-        if (Input.GetKey(KeyCode.LeftShift))
+        if (Input.GetKey(KeyCode.LeftShift) && !StaminaMonitor.isRecoveringStamina)
         {
             if (!isRunning)
             {
                 isRunning = true;
-                anim.SetBool("run", isRunning);                
+                anim.SetBool("run", isRunning);
             }
+
+            StaminaMonitor.staminaValue -= 2f;
             speed = r_speed;
         }
         else
         {
+            StaminaMonitor.staminaValue += 1f;
             isRunning = false;
             anim.SetBool("run", isRunning);
-
         }
 
 
@@ -134,7 +138,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (combatMode)
         {
-            if (Input.GetMouseButtonUp(0))
+            if (Input.GetMouseButtonUp(0) && !isAttacking)
             {
                 if (isJumping)
                 {
@@ -142,8 +146,11 @@ public class PlayerMovement : MonoBehaviour
                 }
                 else
                 {
+                    isAttacking = true;
+                    anim.SetBool("attack", isAttacking);
                     swingSword.Play();
                     anim.Play("1H_Heavy_Smash", -1, 0f);
+                    StartCoroutine(AttackingDelay());
                 }
             }
         }
@@ -180,6 +187,13 @@ public class PlayerMovement : MonoBehaviour
 
             combatMode = false;
         }
+    }
+
+    IEnumerator AttackingDelay()
+    {
+        yield return new WaitForSeconds(0.75f);
+        isAttacking = false;
+
     }
 
     void OnCollisionEnter()

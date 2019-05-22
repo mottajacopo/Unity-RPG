@@ -79,7 +79,7 @@ public class SpiderAI : MonoBehaviour
         // check if the spider is alive
         if(SpiderEnemy.globalSpider != 6)
         {
-            HealthMonitor.healthValue -= 1;
+            HealthMonitor.healthValue -= 10;
         }
 
         yield return new WaitForSeconds(0.4f);
