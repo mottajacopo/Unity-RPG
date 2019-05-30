@@ -16,7 +16,7 @@ public class HeartCollect : MonoBehaviour
 
     void OnCollisionEnter()
     {
-        collectSound.Play();
+        //collectSound.Play();
         HealthMonitor.healthValue += 100;
         this.heart.SetActive(false);
     }

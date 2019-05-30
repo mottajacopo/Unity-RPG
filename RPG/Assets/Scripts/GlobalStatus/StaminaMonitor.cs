@@ -27,8 +27,8 @@ public class StaminaMonitor : MonoBehaviour
             staminaValue = 300;
 
         staminaBar.GetComponent<RectTransform>().sizeDelta = new Vector2(staminaValue, 30);
-
-        if(staminaValue == 0)
+        
+        if(staminaValue <= 0)
         {
             isRecoveringStamina = true;
             StartCoroutine(RecoverStamina());

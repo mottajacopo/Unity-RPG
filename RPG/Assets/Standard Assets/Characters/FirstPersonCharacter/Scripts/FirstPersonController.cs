@@ -87,7 +87,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private void PlayLandingSound()
         {
             m_AudioSource.clip = m_LandSound;
-            m_AudioSource.Play();
+//            m_AudioSource.Play();
             m_NextStep = m_StepCycle + .5f;
         }
 
@@ -102,7 +102,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
             // get a normal for the surface that is being touched to move along it
             RaycastHit hitInfo;
             Physics.SphereCast(transform.position, m_CharacterController.radius, Vector3.down, out hitInfo,
-                               m_CharacterController.height/2f, Physics.AllLayers, QueryTriggerInteraction.Ignore);
+                               m_CharacterController.height/2f);
             desiredMove = Vector3.ProjectOnPlane(desiredMove, hitInfo.normal).normalized;
 
             m_MoveDir.x = desiredMove.x*speed;
@@ -129,8 +129,6 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
             ProgressStepCycle(speed);
             UpdateCameraPosition(speed);
-
-            m_MouseLook.UpdateCursorLock();
         }
 
 
@@ -156,11 +154,11 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
             m_NextStep = m_StepCycle + m_StepInterval;
 
-            PlayFootStepAudio();
+       //     PlayFootStepAudio();
         }
 
 
-        private void PlayFootStepAudio()
+        /*private void PlayFootStepAudio()
         {
             if (!m_CharacterController.isGrounded)
             {
@@ -174,7 +172,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
             // move picked sound to index 0 so it's not picked next time
             m_FootstepSounds[n] = m_FootstepSounds[0];
             m_FootstepSounds[0] = m_AudioSource.clip;
-        }
+        }*/
 
 
         private void UpdateCameraPosition(float speed)
