@@ -2,23 +2,23 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpiderBossEnemy : MonoBehaviour
+public class SpiderEnemy : MonoBehaviour
 {
-    public int enemyHealth = 20;
-    public GameObject spiderBoss;
+    public int enemyHealth = 10;
+    public GameObject spider;
     public int spiderStatus;
     public float baseExp = 10;
     public float calculatedExp;
-    public SpiderBossAI spiderAiScript;
-    public SpiderBossAttack spiderAttackScript;
+    public SpiderAI spiderAiScript;
+    public Rigidbody rb;
 
 
     public static float globalSpider;
 
     void Start()
     {
-        spiderAiScript = GetComponent<SpiderBossAI>();
-        spiderAttackScript = GetComponent<SpiderBossAttack>();
+        spiderAiScript = GetComponent<SpiderAI>();
+        rb = GetComponent<Rigidbody>();
     }
 
     void DeductPoints(int damageAmount)
@@ -31,15 +31,9 @@ public class SpiderBossEnemy : MonoBehaviour
     {
         globalSpider = spiderStatus;
 
-        if(spiderStatus == 6)
-        {
-            StartCoroutine(DeathSpider());
-        }
-
         if (enemyHealth <= 0)
         {
             if(spiderStatus == 0)
-            QuestManager.subQuestNumber = 2;
             StartCoroutine(DeathSpider());
         }
     }
@@ -47,13 +41,11 @@ public class SpiderBossEnemy : MonoBehaviour
     IEnumerator DeathSpider()
     {
         spiderAiScript.enabled = false;
-        spiderAttackScript.enabled = false;
         spiderStatus = 6;
         calculatedExp = baseExp / GlobalLevel.currentLevel;
+        rb.isKinematic = true;
         GlobalExp.currentExp +=  calculatedExp;
         yield return new WaitForSeconds(0.5f);
-        spiderBoss.GetComponent<Animation>().Play("death");
-        yield return new WaitForSeconds(1);
-        spiderBoss.GetComponent<Animation>().enabled = false;
+        spider.GetComponent<Animation>().Play("die");
     }
 }

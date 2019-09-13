@@ -18,7 +18,7 @@ public class PlayerMovement : MonoBehaviour
     private float inputH;
     private float inputV;
     public float speed;
-    private float w_speed = 0.05f;
+    private float w_speed = 0.02f;
     private float r_speed = 0.2f;
     private float c_speed = 0.025f;
     public float rotSpeed;
@@ -60,7 +60,7 @@ public class PlayerMovement : MonoBehaviour
                 anim.SetBool("run", isRunning);
             }
 
-            StaminaMonitor.staminaValue -= 2f;
+            StaminaMonitor.staminaValue -= 0.5f;
             speed = r_speed;
         }
         else
