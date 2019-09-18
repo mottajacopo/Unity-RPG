@@ -19,7 +19,8 @@ public class QuestManager : MonoBehaviour
     public GameObject objective04Mark; // complete Quest001
 
     public GameObject objective05Mark; // start Quest002
-    public GameObject objective06Mark; // complete Quest002
+    public GameObject objective06Mark; // kill spider
+    public GameObject objective07Mark; // complete Quest002
 
     void Start()
     {
@@ -67,14 +68,19 @@ public class QuestManager : MonoBehaviour
 
         if (activeQuestNumber == 2)
         {
-            if (internalSubQuestNumber == 1)
+            if (internalSubQuestNumber == 0)
             {
                 mainMark.transform.position = objective05Mark.transform.position;
             }
 
-            else if (internalSubQuestNumber == 2)
+            else if (internalSubQuestNumber == 1)
             {
                 mainMark.transform.position = objective06Mark.transform.position;
+            }
+
+            else
+            {
+                mainMark.transform.position = objective07Mark.transform.position;
             }
         }
     }
