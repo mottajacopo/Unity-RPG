@@ -26,7 +26,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotateSpeed: 2
-  collectSound: {fileID: 0}
+  collectSound: {fileID: 8444232945101917695, guid: a0c9fb46a6464e442805297e37722bf2,
+    type: 3}
   heart: {fileID: 7200486352823073968}
 --- !u!1001 &7200486352823040528
 PrefabInstance:

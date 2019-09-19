@@ -17,6 +17,6 @@ public class SpiderBossAI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //agent.SetDestination(destination.transform.position);
+        agent.SetDestination(destination.transform.position);
     }
 }
