@@ -124,16 +124,24 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.R))
         {
             print("Press R");
-            anim.Play("2W_weapons_ready", -1, 0f);
+            print("[BEFORE]: " + combatMode);
             if (!combatMode)
             {
+                anim.Play("2W_weapons_ready", -1, 0f);
                 StartCoroutine(FromBackToHand());
+                combatMode = true;
             }
 
-            if (combatMode)
+            else if (combatMode)
             {
+                Debug.Log("Here combat Mode");
                 StartCoroutine(FromHandToBack());
+                combatMode = false;
+
             }
+
+            print("[AFTER]: " + combatMode);
+
         }
 
         if (combatMode)
@@ -166,8 +174,6 @@ public class PlayerMovement : MonoBehaviour
             yield return new WaitForSeconds(0.3f);
             handShield.SetActive(true);
             handSword.SetActive(true);
-
-            combatMode = true;
         }
     }
 
@@ -183,10 +189,10 @@ public class PlayerMovement : MonoBehaviour
             backSword.SetActive(true);
 
             yield return new WaitForSeconds(1.3f);
-            anim.Play("IDLE", -1, 0f);
-
-            combatMode = false;
         }
+
+        anim.Play("IDLE", -1, 0f);
+        Debug.Log("Here IDLE");
     }
 
     IEnumerator AttackingDelay()

@@ -10,20 +10,37 @@ public class Scene01 : MonoBehaviour
     public GameObject fadeOut;
     public GameObject fadeIn;
     public GameObject player;
+    public GameObject staminaBar;
+    public GameObject healthBar;
+    public GameObject minimap;
+    public GameObject cutScene;
 
     // Start is called before the first frame update
     void Start()
     {
+
         StartCoroutine(CutSceneStart());
+            
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            cutScene.SetActive(false);
+            player.SetActive(true);
+            staminaBar.SetActive(true);
+            healthBar.SetActive(true);
+            minimap.SetActive(true);
+        }
     }
 
     IEnumerator CutSceneStart()
     {
+        staminaBar.SetActive(false);
+        healthBar.SetActive(false);
+        minimap.SetActive(false);
         yield return new WaitForSeconds(5);
         camera2.SetActive(true);
         camera1.SetActive(false);
@@ -39,5 +56,8 @@ public class Scene01 : MonoBehaviour
         fadeOut.SetActive(false);
         camera3.SetActive(false);
         yield return new WaitForSeconds(1);
+        staminaBar.SetActive(true);
+        healthBar.SetActive(true);
+        minimap.SetActive(true);
     }
 }

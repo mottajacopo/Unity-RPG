@@ -14,10 +14,10 @@ OcclusionCullingSettings:
 RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 9
-  m_Fog: 0
+  m_Fog: 1
   m_FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   m_FogMode: 3
-  m_FogDensity: 0.04
+  m_FogDensity: 0.02
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
   m_AmbientSkyColor: {r: 0.3798505, g: 0.5299633, b: 0.8301887, a: 1}
@@ -312,15 +312,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400038, guid: 906f26c0c2bfb89449ce5dfb7557a009, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 913
+      value: 958.4
       objectReference: {fileID: 0}
     - target: {fileID: 400038, guid: 906f26c0c2bfb89449ce5dfb7557a009, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -102
+      value: -95.7
       objectReference: {fileID: 0}
     - target: {fileID: 400038, guid: 906f26c0c2bfb89449ce5dfb7557a009, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1143.11
+      value: 1211
       objectReference: {fileID: 0}
     - target: {fileID: 400038, guid: 906f26c0c2bfb89449ce5dfb7557a009, type: 3}
       propertyPath: m_LocalRotation.x
@@ -1659,8 +1659,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 124149252}
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 969.97, y: 5.42, z: 958.68}
-  m_LocalScale: {x: 1.0410005, y: 1.0662963, z: 20.820007}
+  m_LocalPosition: {x: 734.2, y: 0.5, z: 1198}
+  m_LocalScale: {x: 10, y: 10, z: 500}
   m_Children: []
   m_Father: {fileID: 223102643}
   m_RootOrder: 0
@@ -10134,7 +10134,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &894295069
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10153,6 +10153,10 @@ MonoBehaviour:
   fadeOut: {fileID: 1214662115}
   fadeIn: {fileID: 889145630}
   player: {fileID: 18207529}
+  staminaBar: {fileID: 183305889}
+  healthBar: {fileID: 2051599907}
+  minimap: {fileID: 1713703171}
+  cutScene: {fileID: 894295068}
 --- !u!4 &894295070
 Transform:
   m_ObjectHideFlags: 0
@@ -11350,10 +11354,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 714710078}
     m_Modifications:
-    - target: {fileID: 106880, guid: 7ed1937ccef15c6428db928810af76bd, type: 3}
-      propertyPath: m_Name
-      value: Chest
-      objectReference: {fileID: 0}
     - target: {fileID: 456894, guid: 7ed1937ccef15c6428db928810af76bd, type: 3}
       propertyPath: m_LocalPosition.x
       value: 700
@@ -11409,6 +11409,10 @@ PrefabInstance:
     - target: {fileID: 456894, guid: 7ed1937ccef15c6428db928810af76bd, type: 3}
       propertyPath: m_LocalScale.z
       value: 1.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 106880, guid: 7ed1937ccef15c6428db928810af76bd, type: 3}
+      propertyPath: m_Name
+      value: Chest
       objectReference: {fileID: 0}
     - target: {fileID: 404856, guid: 7ed1937ccef15c6428db928810af76bd, type: 3}
       propertyPath: m_LocalRotation.w
@@ -21306,7 +21310,7 @@ Terrain:
   m_TreeBillboardDistance: 265
   m_TreeCrossFadeLength: 70.9
   m_TreeMaximumFullLODCount: 803
-  m_DetailObjectDistance: 100
+  m_DetailObjectDistance: 50
   m_DetailObjectDensity: 1
   m_HeightmapPixelError: 5
   m_SplatMapDistance: 1000
@@ -25084,6 +25088,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1169829240}
     m_Modifications:
+    - target: {fileID: 8444232945101917695, guid: a0c9fb46a6464e442805297e37722bf2,
+        type: 3}
+      propertyPath: m_Volume
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8444232945101917689, guid: a0c9fb46a6464e442805297e37722bf2,
         type: 3}
       propertyPath: m_Name
@@ -25143,11 +25152,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8444232945101917695, guid: a0c9fb46a6464e442805297e37722bf2,
-        type: 3}
-      propertyPath: m_Volume
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a0c9fb46a6464e442805297e37722bf2, type: 3}
