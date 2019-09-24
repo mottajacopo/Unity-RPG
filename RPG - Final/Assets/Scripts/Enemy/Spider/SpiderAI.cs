@@ -38,7 +38,7 @@ public class SpiderAI : MonoBehaviour
                 {
                     enemy.GetComponent<Animation>().Play("walk");
                     transform.position = Vector3.MoveTowards(transform.position, player.transform.position, enemySpeed);
-                }
+                }             
             }
 
             else

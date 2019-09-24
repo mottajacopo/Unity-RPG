@@ -19,7 +19,7 @@ public class PlayerMovement : MonoBehaviour
     private float inputV;
     public float speed;
     private float w_speed = 0.2f;
-    private float r_speed = 1f;
+    private float r_speed = 0.5f;
     private float c_speed = 0.025f;
     public float rotSpeed;
     public float jumpHeight;
