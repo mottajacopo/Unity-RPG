@@ -14,6 +14,8 @@ public class NPC001_RedSamurai : MonoBehaviour
     public GameObject player;
     public GameObject smallSpider;
     public GameObject smallSpiderOne;
+    public GameObject smallSpiderTwo;
+    public GameObject smallSpiderThree;
     public GameObject bossSpider;
 
 
@@ -71,7 +73,7 @@ public class NPC001_RedSamurai : MonoBehaviour
                 smallSpider.SetActive(false);
                 smallSpiderOne.SetActive(false);
                 bossSpider.SetActive(false);
-                yield return new WaitForSeconds(5.5f);
+                yield return new WaitForSeconds(5.0f);
                 textBox.SetActive(false);
                 NPCName.SetActive(false);
                 NPCText.SetActive(false);
@@ -89,12 +91,14 @@ public class NPC001_RedSamurai : MonoBehaviour
                 NPCText.SetActive(true);
                 smallSpider.SetActive(true);
                 smallSpiderOne.SetActive(true);
+                smallSpiderTwo.SetActive(true);
+                smallSpiderThree.SetActive(true);
                 bossSpider.SetActive(true);
-                yield return new WaitForSeconds(5.5f);
+                yield return new WaitForSeconds(5.0f);
                 textBox.SetActive(false);
                 NPCName.SetActive(false);
                 NPCText.SetActive(false);
-                QuestManager.subQuestNumber = 1;
+                QuestManager.subQuestNumber = 2;
                 MasterQuest.mainQuestInfo = "Hi, young control Champion.\n Unluckly, someone stole our Central Control System and now seems" +
                     "that everything is out of control. Please go and kill the Spider that made our world unstable";
                 MasterQuest.subQuestInfo = "1. Kill the spider Boss \n" +

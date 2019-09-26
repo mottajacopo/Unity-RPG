@@ -25,6 +25,7 @@ public class SpiderBossEnemy : MonoBehaviour
 
     void DeductPoints(int damageAmount)
     {
+        print("boss has been attacked");
         enemyHealth -= damageAmount;
     }
 
@@ -40,6 +41,7 @@ public class SpiderBossEnemy : MonoBehaviour
 
         if (enemyHealth <= 0)
         {
+            print("boss is dead");
             if(spiderStatus == 0)
             QuestManager.subQuestNumber = 2;
             StartCoroutine(DeathSpider());

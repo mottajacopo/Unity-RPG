@@ -17,6 +17,11 @@ public class InventoryMenu : MonoBehaviour
     public GameObject questPanel;
     public GameObject statsPanel;
 
+    public GameObject showSword;
+    public GameObject showShield;
+
+    public GameObject realSword;
+    public GameObject realShield;
 
     // exit button component
     public GameObject yesButton;
@@ -64,6 +69,16 @@ public class InventoryMenu : MonoBehaviour
         itemsPanel.SetActive(true);
         questPanel.SetActive(false);
         statsPanel.SetActive(false);
+        if (realSword.activeSelf)
+        {
+            print("show Sword");
+            showSword.SetActive(true);
+        }
+        if (realShield.activeSelf)
+        {
+            print("show shield");
+            showShield.SetActive(true);
+        }
     }
 
     public void ShowQuests()

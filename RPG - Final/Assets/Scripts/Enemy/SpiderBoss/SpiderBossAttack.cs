@@ -40,6 +40,7 @@ public class SpiderBossAttack : MonoBehaviour
         // check if the spider is alive
         if (SpiderEnemy.globalSpider != 6)
         {
+            print("Dealing Damage");
             HealthMonitor.healthValue -= 10;
         }
 

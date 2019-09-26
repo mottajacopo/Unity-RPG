@@ -68,12 +68,12 @@ public class QuestManager : MonoBehaviour
 
         if (activeQuestNumber == 2)
         {
-            if (internalSubQuestNumber == 0)
+            if (internalSubQuestNumber == 1)
             {
                 mainMark.transform.position = objective05Mark.transform.position;
             }
 
-            else if (internalSubQuestNumber == 1)
+            else if (internalSubQuestNumber == 2)
             {
                 mainMark.transform.position = objective06Mark.transform.position;
             }

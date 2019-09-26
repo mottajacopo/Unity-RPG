@@ -23,7 +23,7 @@ public class MenuControls : MonoBehaviour
     {
         menuMusic.Stop();
         loadingGame.SetActive(true);
-        SceneManager.LoadScene("Area01");
+        SceneManager.LoadScene("MainScene");
     }
 
     public void QuitGame()

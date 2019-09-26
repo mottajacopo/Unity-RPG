@@ -41,7 +41,7 @@ public class HearthSpawn : MonoBehaviour
 
         else if(Time.time % 20 > 0 && Time.time % 20 < 1)
         {
-            Debug.Log("[RESPAWN]");
+            //Debug.Log("[RESPAWN]");
             foreach (GameObject h in hearts)
             {
                 GameObject.Destroy(h);

@@ -6,7 +6,7 @@ public class InflictDamage : MonoBehaviour
 {
     public int damageAmount = 5;
     public float targetDistance;
-    public float allowedRange = 2.00f;
+    public float allowedRange = 3.50f;
 
     // Start is called before the first frame update
     void Start()
