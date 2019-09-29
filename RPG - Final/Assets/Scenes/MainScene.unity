@@ -14,7 +14,7 @@ OcclusionCullingSettings:
 RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 9
-  m_Fog: 0
+  m_Fog: 1
   m_FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   m_FogMode: 3
   m_FogDensity: 0.02
@@ -1965,7 +1965,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotateSpeed: 2
-  collectSound: {fileID: 1388406996}
+  heart: {fileID: 0}
 --- !u!65 &138412971
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -16887,12 +16887,6 @@ Transform:
 --- !u!4 &1388406995 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8444232945101917688, guid: a0c9fb46a6464e442805297e37722bf2,
-    type: 3}
-  m_PrefabInstance: {fileID: 8444232944334284075}
-  m_PrefabAsset: {fileID: 0}
---- !u!82 &1388406996 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 8444232945101917695, guid: a0c9fb46a6464e442805297e37722bf2,
     type: 3}
   m_PrefabInstance: {fileID: 8444232944334284075}
   m_PrefabAsset: {fileID: 0}

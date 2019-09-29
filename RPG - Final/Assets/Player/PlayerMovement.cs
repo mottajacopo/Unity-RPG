@@ -18,7 +18,7 @@ public class PlayerMovement : MonoBehaviour
     private float inputH;
     private float inputV;
     public float speed;
-    private float w_speed = 1.2f;
+    private float w_speed = 0.5f;
     private float r_speed = 1.0f;
     private float c_speed = 0.025f;
     public float rotSpeed;
