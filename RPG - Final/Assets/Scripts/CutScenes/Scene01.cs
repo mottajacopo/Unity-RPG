@@ -14,6 +14,11 @@ public class Scene01 : MonoBehaviour
     public GameObject healthBar;
     public GameObject minimap;
     public GameObject cutScene;
+    public GameObject spiderBoss;
+    public GameObject spiderOne;
+    public GameObject spiderTwo;
+    public GameObject spiderThree;
+    public GameObject spiderFour;
 
     // Start is called before the first frame update
     void Start()
@@ -33,6 +38,11 @@ public class Scene01 : MonoBehaviour
             staminaBar.SetActive(true);
             healthBar.SetActive(true);
             minimap.SetActive(true);
+            spiderBoss.SetActive(false);
+            spiderOne.SetActive(false);
+            spiderTwo.SetActive(false);
+            spiderThree.SetActive(false);
+            spiderFour.SetActive(false);
         }
     }
 
@@ -59,5 +69,10 @@ public class Scene01 : MonoBehaviour
         staminaBar.SetActive(true);
         healthBar.SetActive(true);
         minimap.SetActive(true);
+        spiderBoss.SetActive(false);
+        spiderOne.SetActive(false);
+        spiderTwo.SetActive(false);
+        spiderThree.SetActive(false);
+        spiderFour.SetActive(false);
     }
 }
