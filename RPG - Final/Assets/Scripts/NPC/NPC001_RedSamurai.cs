@@ -63,7 +63,7 @@ public class NPC001_RedSamurai : MonoBehaviour
     {
         if(QuestManager.activeQuestNumber == 2)
         {
-            if (QuestManager.subQuestNumber == 2)
+            if (QuestManager.subQuestNumber == 3)
             {
                 textBox.SetActive(true);
                 NPCName.GetComponent<Text>().text = "Giorgio";
@@ -72,8 +72,10 @@ public class NPC001_RedSamurai : MonoBehaviour
                 NPCText.SetActive(true);
                 smallSpider.SetActive(false);
                 smallSpiderOne.SetActive(false);
+                smallSpiderTwo.SetActive(false);
+                smallSpiderThree.SetActive(false);
                 bossSpider.SetActive(false);
-                yield return new WaitForSeconds(5.0f);
+                yield return new WaitForSeconds(4.0f);
                 textBox.SetActive(false);
                 NPCName.SetActive(false);
                 NPCText.SetActive(false);
@@ -94,7 +96,7 @@ public class NPC001_RedSamurai : MonoBehaviour
                 smallSpiderTwo.SetActive(true);
                 smallSpiderThree.SetActive(true);
                 bossSpider.SetActive(true);
-                yield return new WaitForSeconds(5.0f);
+                yield return new WaitForSeconds(4.0f);
                 textBox.SetActive(false);
                 NPCName.SetActive(false);
                 NPCText.SetActive(false);
@@ -102,7 +104,7 @@ public class NPC001_RedSamurai : MonoBehaviour
                 MasterQuest.mainQuestInfo = "Hi, young control Champion.\n Unluckly, someone stole our Central Control System and now seems" +
                     "that everything is out of control. Please go and kill the Spider that made our world unstable";
                 MasterQuest.subQuestInfo = "1. Kill the spider Boss \n" +
-                    "2. Go and Explore the cave";
+                    "2. Come Back to Giorgio";
             }
             else
             {

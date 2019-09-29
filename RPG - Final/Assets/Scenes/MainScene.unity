@@ -21956,9 +21956,9 @@ MonoBehaviour:
   NPCText: {fileID: 1618533082}
   player: {fileID: 18207529}
   smallSpider: {fileID: 2093971284}
-  smallSpiderOne: {fileID: 0}
-  smallSpiderTwo: {fileID: 0}
-  smallSpiderThree: {fileID: 0}
+  smallSpiderOne: {fileID: 1876145877}
+  smallSpiderTwo: {fileID: 1799797207}
+  smallSpiderThree: {fileID: 635269038}
   bossSpider: {fileID: 2016937850}
 --- !u!1 &1909974716 stripped
 GameObject:
