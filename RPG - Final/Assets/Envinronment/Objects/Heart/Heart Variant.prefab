@@ -1,5 +1,21 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!54 &5036583449195737835
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7200486352823073968}
+  serializedVersion: 2
+  m_Mass: 10
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!65 &2050607159
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11,8 +27,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.05994598, y: 0.13872917, z: 0.14973003}
-  m_Center: {x: 0.00007471538, y: 0.19865206, z: -0.002288361}
+  m_Size: {x: 0.10401607, y: 0.13872914, z: 0.17261703}
+  m_Center: {x: -0.005595857, y: 0.19865206, z: -0.0010764688}
 --- !u!114 &2050607158
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -94,15 +110,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4c8d2ba62b6dba144a80cdda9adeaa41, type: 3}
       propertyPath: m_LocalScale.x
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4c8d2ba62b6dba144a80cdda9adeaa41, type: 3}
       propertyPath: m_LocalScale.y
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4c8d2ba62b6dba144a80cdda9adeaa41, type: 3}
       propertyPath: m_LocalScale.z
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 2300000, guid: 4c8d2ba62b6dba144a80cdda9adeaa41, type: 3}
       propertyPath: m_DynamicOccludee

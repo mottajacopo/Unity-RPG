@@ -34,7 +34,7 @@ public class HearthSpawn : MonoBehaviour
 
 
             valueX = Random.Range(-50, 50);
-            valueY = Random.Range(0, 0);
+            valueY = Random.Range(50, 100);
             valueZ = Random.Range(-100, 100);
             heart.transform.position = new Vector3(heroX + valueX, heroY + valueY, heroZ + valueZ);
         }

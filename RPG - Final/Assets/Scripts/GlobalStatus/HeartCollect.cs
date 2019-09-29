@@ -14,10 +14,14 @@ public class HeartCollect : MonoBehaviour
         transform.Rotate(0, rotateSpeed, 0, Space.World);
     }
 
-    void OnCollisionEnter()
+    void OnCollisionEnter(Collision target)
     {
-        //collectSound.Play();
-        HealthMonitor.healthValue += 100;
-        this.heart.SetActive(false);
+        if (target.gameObject.name == "player")
+        {
+            collectSound.Play();
+            HealthMonitor.healthValue += 100;
+            Destroy(this.heart);
+            //print("Collision");
+        }
     }
 }
