@@ -38,7 +38,7 @@ public class SpiderBossAttack : MonoBehaviour
         yield return new WaitForSeconds(1f);
 
         // check if the spider is alive
-        if (SpiderEnemy.globalSpider != 6)
+        if (SpiderBossEnemy.globalSpider != 6)
         {
             print("Dealing Damage");
             HealthMonitor.healthValue -= 10;

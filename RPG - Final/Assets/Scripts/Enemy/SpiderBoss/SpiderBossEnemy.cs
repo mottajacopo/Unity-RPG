@@ -20,6 +20,7 @@ public class SpiderBossEnemy : MonoBehaviour
         spiderAiScript = GetComponent<SpiderBossAI>();
         spiderAttackScript = GetComponent<SpiderBossAttack>();
         rb = GetComponent<Rigidbody>();
+        spiderStatus = 0;
 
     }
 
@@ -34,17 +35,11 @@ public class SpiderBossEnemy : MonoBehaviour
     {
         globalSpider = spiderStatus;
 
-        if(spiderStatus == 6)
-        {
-            StartCoroutine(DeathSpider());
-        }
-
         if (enemyHealth <= 0)
         {
             print("Boss is dead");
             if (spiderStatus == 0)
             {
-                QuestManager.subQuestNumber = 3;
                 StartCoroutine(DeathSpider());
             }
         }
@@ -59,8 +54,9 @@ public class SpiderBossEnemy : MonoBehaviour
         rb.isKinematic = true;
         GlobalExp.currentExp +=  calculatedExp;
         yield return new WaitForSeconds(0.5f);
-        //spiderBoss.GetComponent<Animation>().Play("death");
-        //yield return new WaitForSeconds(1);
+        spiderBoss.GetComponent<Animation>().Play("death");
+        yield return new WaitForSeconds(1.5f);
         spiderBoss.GetComponent<Animation>().enabled = false;
+        QuestManager.subQuestNumber = 3;
     }
 }
